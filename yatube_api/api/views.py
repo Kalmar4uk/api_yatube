@@ -1,9 +1,9 @@
-from rest_framework import viewsets
-from posts.models import Comment, Post, Group
 from django.shortcuts import get_object_or_404
+from posts.models import Comment, Group, Post
+from rest_framework import viewsets
 
-from .serializers import CommentSerializer, PostSerializer, GroupSerializer
 from .permissions import AuthorOrReadOnly
+from .serializers import CommentSerializer, GroupSerializer, PostSerializer
 
 
 class PostViewSet(viewsets.ModelViewSet):
